@@ -1,0 +1,1 @@
+# codility-assesment-week-js
