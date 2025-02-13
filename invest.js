@@ -173,14 +173,33 @@
 //     return cards
 // }
 
-// QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
-function LetterCapitalize(str){
-    let word = str.split(' ')
-    let wordCapital = word.map(letter =>{
-        return letter.charAt[0].toUppercase()+letter.slice(1)
-    })
+// // QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
+// function LetterCapitalize(str){
+//     let word = str.split(' ')
+//     let wordCapital = word.map(letter =>{
+//         return letter.charAt[0].toUppercase()+letter.slice(1)
+//     })
 
-    return wordCapital.join(' ')
+//     return wordCapital.join(' ')
+// }
+
+// console.log(LetterCapitalize(readLine()))
+
+// QUESTION 9: SHUFFLED REPRESENTATION OF AN INTEGER
+function solution(A){
+    let n = A.toString()
+    leftPointer = 0
+    rightPointer = n.length-1
+    let sol = []
+
+    while (leftPointer < rightPointer){
+        sol.push(parseInt(str[leftPointer]))
+        sol.push(parseInt(str[rightPointer]))
+        leftPointer += 1
+        rightPointr -= 1
+        if(leftPointer === rightPointer){
+            sol.push(str[leftPointer])
+        }
+    }
+    return parseInt(sol.join(' '))
 }
-
-console.log(LetterCapitalize(readLine()))
