@@ -159,16 +159,28 @@
 //     return larg_odd + large_even
 // }
 
-// QUESTION 7:GYM VISITS
-function solution(visits){
-    let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
+// // QUESTION 7:GYM VISITS
+// function solution(visits){
+//     let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
 
-    let visited = visits.map(day => days[day])
-    let cards = 1
-    for(let i =0; i < visits.length;i++){
-        if(visited[i + 1] <= visited[i]){
-            cards += 1
-        }
-    }
-    return cards
+//     let visited = visits.map(day => days[day])
+//     let cards = 1
+//     for(let i =0; i < visits.length;i++){
+//         if(visited[i + 1] <= visited[i]){
+//             cards += 1
+//         }
+//     }
+//     return cards
+// }
+
+// QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
+function LetterCapitalize(str){
+    let word = str.split(' ')
+    let wordCapital = word.map(letter =>{
+        return letter.charAt[0].toUppercase()+letter.slice(1)
+    })
+
+    return wordCapital.join(' ')
 }
+
+console.log(LetterCapitalize(readLine()))
