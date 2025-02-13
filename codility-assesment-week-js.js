@@ -143,40 +143,51 @@
 
 // }
 
-// // QUESTION 6: SUM OF THE LARGEST ODD NUMBERS AND SUM OF THE LARGEST EVEN NUMBERS.
-// function solution (A){
-//     let larg_odd = 0
-//     let large_even = 0
-//     for(num of A){
-//         if(num % 2 === 0 && large_even){
-//             large_even = num
-//         }else if(num % 2 !== 0 && num > larg_odd){
-//             larg_odd = num
-//         }else {
-//             return "Invalid"
-//         }
-//     }
-//     return larg_odd + large_even
-// }
-
-// QUESTION 7:GYM VISITS
-function solution(visits){
-    let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
-
-    let visited = visits.map(day => days[day])
-    let cards = 1
-    for(let i =0; i < visits.length;i++){
-        if(visited[i + 1] <= visited[i]){
-            cards += 1
+// QUESTION 6: SUM OF THE LARGEST ODD NUMBERS AND SUM OF THE LARGEST EVEN NUMBERS.
+function solution (A){
+    let larg_odd = 0
+    let large_even = 0
+    for(let num of A){
+        if(num % 2 === 0 && num > large_even){
+            large_even = num
+        }else if(num % 2 !== 0 && num > larg_odd){
+            larg_odd = num
+        }else{
+            return "Invalid"
         }
     }
-    return cards
+    // if (larg_odd === 0 || large_even === 0){
+    //     return 'Invalid'
+    // }
+    return larg_odd + large_even
 }
 
-console.log(solution(["Mon", "Tue", "Wed", "Thu", "Fri"]));
-console.log(solution(["Mon", "Wed", "Fri", "Mon", "Tue"])); 
-console.log(solution(["Sun", "Mon", "Tue", "Wed", "Sun", "Mon"]));
-console.log(solution([])); 
+console.log(solution([1, 2, 3, 4, 5, 6]));  
+console.log(solution([7, 14, 21, 28]));  
+console.log(solution([10, 15, 20, 25, 30]));  
+console.log(solution([2, 4, 6, 8]));  
+console.log(solution([1, 3, 5, 7]));  
+console.log(solution([]));  
+console.log(solution([42]));  
+
+// // QUESTION 7:GYM VISITS
+// function solution(visits){
+//     let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
+
+//     let visited = visits.map(day => days[day])
+//     let cards = 1
+//     for(let i =0; i < visits.length;i++){
+//         if(visited[i + 1] <= visited[i]){
+//             cards += 1
+//         }
+//     }
+//     return cards
+// }
+
+// console.log(solution(["Mon", "Tue", "Wed", "Thu", "Fri"]));
+// console.log(solution(["Mon", "Wed", "Fri", "Mon", "Tue"])); 
+// console.log(solution(["Sun", "Mon", "Tue", "Wed", "Sun", "Mon"]));
+// console.log(solution([])); 
 
 // // QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
 // function LetterCapitalize(str){
