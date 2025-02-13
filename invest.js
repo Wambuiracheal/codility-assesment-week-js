@@ -1,51 +1,74 @@
-// //QUESTION 1:COUNTRY WITH GREATEST INVESTMENT
-// //  function solution(A, B) {
-// //     let investmentMap = new Map();
+//QUESTION 1:COUNTRY WITH GREATEST INVESTMENT
+//  function solution(A, B) {
+//     let investmentMap = new Map();
 
-// //     // Step 1 & 2: Extract country code and sum investments
-// //     for (let i = 0; i < A.length; i++) {
-// //         let countryCode = A[i].substring(0, 2); // Extract first two characters
+//     // Step 1 & 2: Extract country code and sum investments
+//     for (let i = 0; i < A.length; i++) {
+//         let countryCode = A[i].substring(0, 2); // Extract first two characters
 
-// //         // Update total investment for this country
-// //         if (investmentMap.has(countryCode)) {
-// //             investmentMap.set(countryCode, investmentMap.get(countryCode) + B[i]);
-// //         } else {
-// //             investmentMap.set(countryCode, B[i]);
-// //         }
-// //     }
+//         // Update total investment for this country
+//         if (investmentMap.has(countryCode)) {
+//             investmentMap.set(countryCode, investmentMap.get(countryCode) + B[i]);
+//         } else {
+//             investmentMap.set(countryCode, B[i]);
+//         }
+//     }
 
-// //     // Step 3: Find the country with max investment
-// //     let maxInvestment = 0;
-// //     let maxCountry = "";
+//     // Step 3: Find the country with max investment
+//     let maxInvestment = 0;
+//     let maxCountry = "";
 
-// //     for (let [country, investment] of investmentMap) {
-// //         if (investment > maxInvestment) {
-// //             maxInvestment = investment;
-// //             maxCountry = country;
-// //         }
-// //     }
+//     for (let [country, investment] of investmentMap) {
+//         if (investment > maxInvestment) {
+//             maxInvestment = investment;
+//             maxCountry = country;
+//         }
+//     }
 
-// //     return maxCountry;
-// // }
+//     return maxCountry;
+// }
+
+// // solo's solution
+// function solution(A, B){
+//     let obj = {}
+//     for (let i = 0; i < A.length; i++){
+//         let code = A[i].substring(0, 2)
+//         if(obj[code]){
+//             obj[code] += B[i]
+//         }else {
+//             obj[code] = B[i]
+//         }
+//     }
+//     let max = 0
+//     let countryCode = ""
+//     for(key in obj){
+//         if(obj[key] > max){
+//             max = obj[key]
+//             countryCode = key
+//         }
+//     }
+//     return countryCode
+
+// }
 
 
-// // // QUESTION 2:a APPEARING BEFORE b
-// // function solution(S){
-// //     let found_b = false;
-// //     for (let i = 0; i < S.length; i++) {
-// //         if (S[i] === 'b') {
-// //             found_b = true;
-// //         }else if (S[i] === 'a' && found_b){
-// //             return false
-// //         }
-// //     }
-// //     return true
-// // }
-// // console.log(solution('abba'))
-// // // 'aabbb, 'ba', 'aaa', 'b', 'abba'
+// // QUESTION 2:a APPEARING BEFORE b
+// function solution(S){
+//     let found_b = false;
+//     for (let i = 0; i < S.length; i++) {
+//         if (S[i] === 'b') {
+//             found_b = true;
+//         }else if (S[i] === 'a' && found_b){
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(solution('abba'))
+// // 'aabbb, 'ba', 'aaa', 'b', 'abba'
 
 
-// // QUESTION 3-ODD AND EVEN NUMBERS
+// QUESTION 3-ODD AND EVEN NUMBERS
 // function solution(S){
 //     let map = {}
 //     let count = 0
