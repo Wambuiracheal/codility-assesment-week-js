@@ -129,17 +129,37 @@
 // console.log(solution( ["Neurology", "Cardiology", "Oncology"]))
 
 
-// QUESTION 5: GRAPH QUESTION
-function solution(X, Y){
-    // [1,1,3,4,7,8,8]
-    let sorted = X.sort((x,y) => x - y)
-    let widest = 1
-    for(let i = 0; i < sorted.length; i++){
-        if(sorted[i + 1] - sorted[i] > widest){
-            widest = sorted[i + 1] - sorted[i]
+// // QUESTION 5: GRAPH QUESTION
+// function solution(X, Y){
+//     // [1,1,3,4,7,8,8]
+//     let sorted = X.sort((x,y) => x - y)
+//     let widest = 1
+//     for(let i = 0; i < sorted.length; i++){
+//         if(sorted[i + 1] - sorted[i] > widest){
+//             widest = sorted[i + 1] - sorted[i]
+//         }
+//     }
+//     return widest
+
+// }
+
+// QUESTION 6: SUM OF THE LARGEST ODD NUMBERS AND SUM OF THE LARGEST EVEN NUMBERS.
+function solution (A){
+    let larg_odd = 0
+    let large_even = 0
+    for(num of A){
+        if(num % 2 === 0 && large_even){
+            large_even = num
+        }else if(num % 2 !== 0 && num > larg_odd){
+            larg_odd = num
+        }else {
+            return "Invalid"
         }
     }
-    return widest
-
+    return larg_odd + large_even
 }
+
+// QUESTION 7:GYM VISITS
+
+
 
