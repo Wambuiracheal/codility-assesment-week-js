@@ -173,34 +173,34 @@
 //     return cards
 // }
 
-// // QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
-// function LetterCapitalize(str){
-//     let word = str.split(' ')
-//     let wordCapital = word.map(letter =>{
-//         return letter.charAt[0].toUppercase()+letter.slice(1)
-//     })
+// QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
+function LetterCapitalize(str){
+    let words = str.split(' ')
+    let wordCapital = words.map(letter =>{
+        return letter.charAt(0).toUpperCase() + letter.slice(1)
+    })
 
-//     return wordCapital.join(' ')
-// }
-
-// console.log(LetterCapitalize(readLine()))
-
-// QUESTION 9: SHUFFLED REPRESENTATION OF AN INTEGER
-function solution(A){
-    let n = A.toString()
-    let leftPointer = 0
-    let rightPointer = n.length-1
-    let sol = []
-
-    while (leftPointer < rightPointer){
-        sol.push(n[leftPointer])
-        sol.push(n[rightPointer])
-        leftPointer ++
-        rightPointer --
-        if(leftPointer === rightPointer){
-            sol.push(n[leftPointer])
-        }
-    }
-    return parseInt(sol.join(''))
+    return wordCapital.join(' ')
 }
-console.log(solution(123456))
+
+console.log(LetterCapitalize('hello world'))
+
+// // QUESTION 9: SHUFFLED REPRESENTATION OF AN INTEGER
+// function solution(A){
+//     let n = A.toString()
+//     let leftPointer = 0
+//     let rightPointer = n.length-1
+//     let sol = []
+
+//     while (leftPointer < rightPointer){
+//         sol.push(n[leftPointer])
+//         sol.push(n[rightPointer])
+//         leftPointer ++
+//         rightPointer --
+//         if(leftPointer === rightPointer){
+//             sol.push(n[leftPointer])
+//         }
+//     }
+//     return parseInt(sol.join(''))
+// }
+// console.log(solution(123456))
