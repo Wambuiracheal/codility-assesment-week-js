@@ -188,18 +188,19 @@
 // QUESTION 9: SHUFFLED REPRESENTATION OF AN INTEGER
 function solution(A){
     let n = A.toString()
-    leftPointer = 0
-    rightPointer = n.length-1
+    let leftPointer = 0
+    let rightPointer = n.length-1
     let sol = []
 
     while (leftPointer < rightPointer){
-        sol.push(parseInt(str[leftPointer]))
-        sol.push(parseInt(str[rightPointer]))
-        leftPointer += 1
-        rightPointr -= 1
+        sol.push(n[leftPointer])
+        sol.push(n[rightPointer])
+        leftPointer ++
+        rightPointer --
         if(leftPointer === rightPointer){
-            sol.push(str[leftPointer])
+            sol.push(n[leftPointer])
         }
     }
-    return parseInt(sol.join(' '))
+    return parseInt(sol.join(''))
 }
+console.log(solution(123456))
