@@ -159,31 +159,36 @@
 //     return larg_odd + large_even
 // }
 
-// // QUESTION 7:GYM VISITS
-// function solution(visits){
-//     let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
+// QUESTION 7:GYM VISITS
+function solution(visits){
+    let days = {"Mon": 1, "Tue":2, "Wed":3, "Thu":4,"Fri":5,"Sat":6,"Sun":7}
 
-//     let visited = visits.map(day => days[day])
-//     let cards = 1
-//     for(let i =0; i < visits.length;i++){
-//         if(visited[i + 1] <= visited[i]){
-//             cards += 1
-//         }
-//     }
-//     return cards
-// }
-
-// QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
-function LetterCapitalize(str){
-    let words = str.split(' ')
-    let wordCapital = words.map(letter =>{
-        return letter.charAt(0).toUpperCase() + letter.slice(1)
-    })
-
-    return wordCapital.join(' ')
+    let visited = visits.map(day => days[day])
+    let cards = 1
+    for(let i =0; i < visits.length;i++){
+        if(visited[i + 1] <= visited[i]){
+            cards += 1
+        }
+    }
+    return cards
 }
 
-console.log(LetterCapitalize('hello world'))
+console.log(solution(["Mon", "Tue", "Wed", "Thu", "Fri"]));
+console.log(solution(["Mon", "Wed", "Fri", "Mon", "Tue"])); 
+console.log(solution(["Sun", "Mon", "Tue", "Wed", "Sun", "Mon"]));
+console.log(solution([])); 
+
+// // QUESTION 8:CAPITALIZE FIRST LETTER OF EVERY SENTENCE
+// function LetterCapitalize(str){
+//     let words = str.split(' ')
+//     let wordCapital = words.map(letter =>{
+//         return letter.charAt(0).toUpperCase() + letter.slice(1)
+//     })
+
+//     return wordCapital.join(' ')
+// }
+
+// console.log(LetterCapitalize('hello world'))
 
 // // QUESTION 9: SHUFFLED REPRESENTATION OF AN INTEGER
 // function solution(A){
